@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-var name = "test"
+var name = "pool"
 
 func main() {
 

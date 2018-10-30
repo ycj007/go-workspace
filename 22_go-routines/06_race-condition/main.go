@@ -30,6 +30,6 @@ func incrementor(s string) {
 	wg.Done()
 }
 
-// go run -race main.go
+// go run -race client.go
 // vs
-// go run main.go
+// go run client.go

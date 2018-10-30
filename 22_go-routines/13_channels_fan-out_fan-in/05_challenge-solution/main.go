@@ -26,7 +26,7 @@ func publisher(out chan string) {
 	atomic.AddInt64(&publisherID, 1)
 	// atomic was added after recording to fix a race condition
 	// discover race conditions with the -race flag
-	// for example: go run -race main.go
+	// for example: go run -race client.go
 	// learn about the atomic package: https://godoc.org/sync/atomic#AddInt64
 	thisID := atomic.LoadInt64(&publisherID)
 	dataID := 0
@@ -42,7 +42,7 @@ func workerProcess(in <-chan string) {
 	atomic.AddInt64(&workerID, 1)
 	// atomic was added after recording to fix a race condition
 	// discover race conditions with the -race flag
-	// for example: go run -race main.go
+	// for example: go run -race client.go
 	// learn about the atomic package: https://godoc.org/sync/atomic#AddInt64
 	thisID := atomic.LoadInt64(&workerID)
 	for {
